@@ -248,7 +248,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#updates" id="toc-updates" class="nav-link active" data-scroll-target="#updates">Updates</a>
+  <li><a href="#mbrspaidbychq" id="toc-mbrspaidbychq" class="nav-link active" data-scroll-target="#mbrspaidbychq">mbrsPaidByChq</a></li>
+  <li><a href="#updates" id="toc-updates" class="nav-link" data-scroll-target="#updates">Updates</a>
   <ul class="collapse">
   <li><a href="#updates-1" id="toc-updates-1" class="nav-link" data-scroll-target="#updates-1">Updates</a></li>
   <li><a href="#fields" id="toc-fields" class="nav-link" data-scroll-target="#fields">Fields</a></li>
@@ -301,6 +302,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <!-- ... -->
+<hr>
+<section id="mbrspaidbychq" class="level3">
+<h3 class="anchored" data-anchor-id="mbrspaidbychq">mbrsPaidByChq</h3>
+<blockquote class="blockquote">
+<pre><code> mbrsPaidByChq ()</code></pre>
+</blockquote>
+<p><em>-&gt; list[str]</em></p>
+</section>
 <section id="updates" class="level1">
 <h1>Updates</h1>
 <ul>
@@ -312,18 +321,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <pre><code> Updates (notes_list:list[str],
           all_updates:list[srs_updates.update_data.UpdateData]=&lt;factory&gt;,
-          date:str='2025-07-20', rel_pin_ids:list[str]=&lt;factory&gt;,
+          date:str='2025-10-30', rel_pin_ids:list[str]=&lt;factory&gt;,
           query_df:pandas.core.frame.DataFrame|None=None,
           test_cml_fp:str|None=None)</code></pre>
 </blockquote>
 </section>
 <section id="fields" class="level2">
 <h2 class="anchored" data-anchor-id="fields">Fields</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>notes_list: <span class="bu">list</span>[<span class="bu">str</span>]</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>all_updates: <span class="bu">list</span>[ud.UpdateData] <span class="op">=</span> field(default_factory<span class="op">=</span>_default_empty_list)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>date: <span class="bu">str</span> <span class="op">=</span> _init_ts()</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>rel_pin_ids: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> field(default_factory<span class="op">=</span>_default_empty_list)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>query_df: pd.DataFrame <span class="op">=</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode py code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>notes_list: <span class="bu">list</span>[<span class="bu">str</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>all_updates: <span class="bu">list</span>[ud.UpdateData] <span class="op">=</span> field(default_factory<span class="op">=</span>_default_empty_list)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>date: <span class="bu">str</span> <span class="op">=</span> _init_ts()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>rel_pin_ids: <span class="bu">list</span>[<span class="bu">str</span>] <span class="op">=</span> field(default_factory<span class="op">=</span>_default_empty_list)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>query_df: pd.DataFrame <span class="op">=</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="methods" class="level2">
 <h2 class="anchored" data-anchor-id="methods">Methods</h2>

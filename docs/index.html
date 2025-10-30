@@ -245,14 +245,17 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="streamlined-data-updates-with-python">Streamlined Data Updates with Python</h2>
 <hr>
 <p>When I first joined, processing day-to-day data updates for the Sears plan was a painfully manual process.</p>
-<p>Every month, we’d comb through tickets in Harmony (the internal ticket system) one by one, copy-pasting details into a sprawling Excel ‘database’ and manually cross-referencing and updating a separate ‘maintenance file’ — a critical file sent monthly to CIBC Mellon to update and sync their systems.</p>
-<p>The process was so tedious it led to skipped steps and one of my first tasks when I joined was reconciling incongruent data between the internal and external databases.</p>
-<p>Shortly afterwards, I took ownership of the entire data update process — and transformed it.</p>
-<p><strong>What began as a handful of scripts evolved into a polished, production-ready Python package: meticulously organized, fully documented, and rigorously tested.</strong></p>
-<p>Now, the entire workflow is streamlined in a scalable, maintainable system: Harmony tickets are scraped automatically and exported into a spreadsheet for quick review and formatting, the database is updated quickly and accurately via scripts and macros, and the maintenance files are generated automatically with only minor revisions needed at the end.</p>
-<p><strong>What once took hours of manual work now runs automatically in minutes with near-perfect accuracy.</strong></p>
-<p>New features and quality of life improvements are constantly being added, with rigorous testing and comprehensive documentation.</p>
-<p>And the real beauty is that <strong>this solution can easily be adapted for other plans</strong>.</p>
+<p>Every month, we’d comb through tickets in an internal ticket system, manually updating a massive Excel ‘database’ file and working on a separate ‘maintenance file’ — a critical file sent monthly to CIBC Mellon to update their systems.</p>
+<p>The process was so tedious it led to skipped steps and one of my first tasks when I joined was reconciling incongruent data between the internal and external databases. Shortly afterwards, I took ownership of the entire data update process.</p>
+<p>Now, the entire workflow is streamlined in a scalable, maintainable system:</p>
+<ul>
+<li>tickets are exported automatically for quick review and minor edits<br>
+</li>
+<li>the database updates are automated via scripts and macros<br>
+</li>
+<li>maintenance files are generated automatically with only minor revisions needed at the end</li>
+</ul>
+<p><strong>What once took hours of manual work now runs automatically in a fraction of the time with near-perfect accuracy.</strong></p>
 <hr>
 </section>
 <section id="key-features" class="level2">
@@ -282,7 +285,19 @@ ul.task-list li input[type="checkbox"] {
 <p>For updates to the internal database, the <a href="./update_xl.html">update_xl</a> module also generates detailed, <strong>human-readable changelogs showing exactly what changes were made and when</strong>.</p></li>
 <li><p><strong>Automated Ticket Closing / Re-assigning</strong></p>
 <p>The <a href="./harmony_automation.html">Harmony Automation</a> module contains functions to automate the closing and re-assigning of tickets, which means no more manually closing and re-assigning tickets and tedious browser navigation/actions.</p>
-<p>This is particularly useful during periods of higher ticket volumes, such as after sending out communications, option forms, etc.</p></li>
+<p>This is particularly useful during periods of higher ticket volumes, such as after sending out communications, option forms, etc.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/sshot_close_logs.png" class="img-fluid figure-img"></p>
+<figcaption>Closing tickets</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/sshot_reassign_logs.png" class="img-fluid figure-img"></p>
+<figcaption>Re-assign tickets</figcaption>
+</figure>
+</div></li>
 </ul>
 
 
