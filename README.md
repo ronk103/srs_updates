@@ -112,3 +112,14 @@ fraction of the time with near-perfect accuracy.**
   ![Closing tickets](./images/sshot_close_logs.png)
 
   ![Re-assign tickets](./images/sshot_reassign_logs.png)
+
+- **Custom Warnings for Specific IDs**
+
+  Custom warnings for specific IDs can be configured in
+  `cfg/warn_ids.yml`, allowing you to define contextual alerts that
+  appear during operations for particular users or transactions.
+
+  For example, when processing a banking update for a specific member,
+  the system can display a custom warning about additional verification
+  steps or adjusted payment amounts, ensuring important exceptions and
+  special instructions are never overlooked.
