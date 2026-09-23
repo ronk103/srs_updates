@@ -66,14 +66,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="harmony_automation – srs_updates">
-<meta property="og:description" content="…">
 <meta property="og:site_name" content="srs_updates">
 <meta name="twitter:title" content="harmony_automation – srs_updates">
-<meta name="twitter:description" content="…">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -113,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">From Tedious to Effortless</span></a>
+ <span class="menu-text">Member Data Update Automation Suite</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -129,24 +128,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./core.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">core</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./update_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">update_data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./srs_specific.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">srs_specific</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./export.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">export</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -180,29 +161,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Scripts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./scripts/main_script.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Main Script</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./scripts/close_and_reassign_harmony_tickets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Close / Re-assign Harmony Tickets</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -213,13 +171,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#helpers" id="toc-helpers" class="nav-link active" data-scroll-target="#helpers">helpers</a>
-  <ul class="collapse">
-  <li><a href="#movemousetocenter" id="toc-movemousetocenter" class="nav-link" data-scroll-target="#movemousetocenter">moveMouseToCenter</a></li>
-  <li><a href="#appendreassignedtkt2yml" id="toc-appendreassignedtkt2yml" class="nav-link" data-scroll-target="#appendreassignedtkt2yml">appendReassignedTkt2Yml</a></li>
-  <li><a href="#appendclosedtkt2yml" id="toc-appendclosedtkt2yml" class="nav-link" data-scroll-target="#appendclosedtkt2yml">appendClosedTkt2Yml</a></li>
-  </ul></li>
-  <li><a href="#playwright" id="toc-playwright" class="nav-link" data-scroll-target="#playwright">Playwright</a>
+  <li><a href="#playwright" id="toc-playwright" class="nav-link active" data-scroll-target="#playwright">Playwright</a>
   <ul class="collapse">
   <li><a href="#start_page" id="toc-start_page" class="nav-link" data-scroll-target="#start_page">start_page</a></li>
   <li><a href="#login" id="toc-login" class="nav-link" data-scroll-target="#login">login</a></li>
@@ -260,110 +212,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <!-- ... -->
-<p>As I own the day-to-day data updates process for the Sears plan, there can be &gt;100 tickets to process every few weeks.</p>
-<p>This module uses Microsoft’s <a href="https://playwright.dev/python/">Playwright</a> library to automate scraping, closing, re-assigning, and adding tickets in bulk to our internal ticket system, <em>“Harmony”</em>.</p>
-<hr>
-<section id="helpers" class="level1">
-<h1>helpers</h1>
-<hr>
-<section id="movemousetocenter" class="level3">
-<h3 class="anchored" data-anchor-id="movemousetocenter">moveMouseToCenter</h3>
 <blockquote class="blockquote">
-<pre><code> moveMouseToCenter (page:playwright.async_api._generated.Page)</code></pre>
+<p>Module to automate closing and re-assigning tickets in an internal ticket system</p>
 </blockquote>
-<p><em>To close the sidebar</em></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th><strong>Type</strong></th>
-<th><strong>Details</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>page</td>
-<td>Page</td>
-<td>Page</td>
-</tr>
-<tr class="even">
-<td><strong>Returns</strong></td>
-<td><strong>None</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 <hr>
-</section>
-<section id="appendreassignedtkt2yml" class="level3">
-<h3 class="anchored" data-anchor-id="appendreassignedtkt2yml">appendReassignedTkt2Yml</h3>
-<blockquote class="blockquote">
-<pre><code> appendReassignedTkt2Yml (t_tkt:str|int, trk_fp:str)</code></pre>
-</blockquote>
-<p><em>Save to file in case of running over several sessions.</em></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th><strong>Type</strong></th>
-<th><strong>Details</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>t_tkt</td>
-<td>str | int</td>
-<td>str | int</td>
-</tr>
-<tr class="even">
-<td>trk_fp</td>
-<td>str</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td><strong>Returns</strong></td>
-<td><strong>None</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 <hr>
-</section>
-<section id="appendclosedtkt2yml" class="level3">
-<h3 class="anchored" data-anchor-id="appendclosedtkt2yml">appendClosedTkt2Yml</h3>
-<blockquote class="blockquote">
-<pre><code> appendClosedTkt2Yml (t_tkt:str|int, trk_fp:str)</code></pre>
-</blockquote>
-<p><em>Save to file in case of running over several sessions.</em></p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th></th>
-<th><strong>Type</strong></th>
-<th><strong>Details</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>t_tkt</td>
-<td>str | int</td>
-<td>str | int</td>
-</tr>
-<tr class="even">
-<td>trk_fp</td>
-<td>str</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td><strong>Returns</strong></td>
-<td><strong>None</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-</section>
 <section id="playwright" class="level1">
 <h1>Playwright</h1>
 <hr>
@@ -805,6 +658,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
     clipboardModal.on('success', onCopySuccess);
   }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/pyronone\.github\.io\/srs_updates");
@@ -821,6 +725,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1140,4 +1049,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

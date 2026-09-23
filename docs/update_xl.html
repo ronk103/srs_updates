@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -67,6 +101,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -114,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">From Tedious to Effortless</span></a>
+ <span class="menu-text">Member Data Update Automation Suite</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -130,24 +165,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./core.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">core</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./update_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">update_data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./srs_specific.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">srs_specific</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./export.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">export</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -181,29 +198,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Scripts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./scripts/main_script.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Main Script</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./scripts/close_and_reassign_harmony_tickets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Close / Re-assign Harmony Tickets</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -214,11 +208,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#key-features" id="toc-key-features" class="nav-link active" data-scroll-target="#key-features">Key Features</a></li>
-  <li><a href="#tracking-options" id="toc-tracking-options" class="nav-link" data-scroll-target="#tracking-options">Tracking Options</a>
-  <ul class="collapse">
-  <li><a href="#trackingoptions" id="toc-trackingoptions" class="nav-link" data-scroll-target="#trackingoptions">TrackingOptions</a></li>
-  </ul></li>
+  <li><a href="#the-problem" id="toc-the-problem" class="nav-link active" data-scroll-target="#the-problem">The problem</a></li>
+  <li><a href="#the-solution" id="toc-the-solution" class="nav-link" data-scroll-target="#the-solution">The solution</a></li>
+  <li><a href="#benefits" id="toc-benefits" class="nav-link" data-scroll-target="#benefits">Benefits</a></li>
+  <li><a href="#example-changelog" id="toc-example-changelog" class="nav-link" data-scroll-target="#example-changelog">Example Changelog</a></li>
   <li><a href="#update" id="toc-update" class="nav-link" data-scroll-target="#update">Update</a>
   <ul class="collapse">
   <li><a href="#main-1" id="toc-main-1" class="nav-link" data-scroll-target="#main-1">main</a></li>
@@ -255,32 +248,52 @@ ul.task-list li input[type="checkbox"] {
 
 <!-- ... -->
 <hr>
-<p>Despite not being best practice, many teams continue to use Excel as a sort of lightweight ‘database’ due to its accessibility and familiarity.</p>
-<p>This module simplifies the process of updating such ‘databases’, providing a set of features to make data updates more effortless, reliable, and traceable.</p>
-<hr>
-<section id="key-features" class="level2">
-<h2 class="anchored" data-anchor-id="key-features">Key Features</h2>
+<section id="the-problem" class="level3">
+<h3 class="anchored" data-anchor-id="the-problem">The problem</h3>
+<p>A shared Excel file was the main system of record — feeding both internal reporting and an external bank submission process for payments and tax filings.</p>
+<p>Updates arrived in batches (a week or two of accumulated changes), and applying them by hand meant manually finding the right row, editing the right cell, and trusting that nothing else got touched along the way. One misplaced edit or accidentally cleared cell could silently propagate into a payment or tax record.</p>
+<p>There was no changelog, no easy way to answer “what changed since last week” or “what exactly changed for member so-and-so, on what date, and to which fields” — and no safety net if something went wrong.</p>
+</section>
+<section id="the-solution" class="level3">
+<h3 class="anchored" data-anchor-id="the-solution">The solution</h3>
+<p>This module replaces manual editing with a controlled update process: changes go into a simple input sheet, the tool merges them against the current data automatically, and every change is logged — so updates are easier, faster, more accurate, and fully traceable.</p>
+</section>
+<section id="benefits" class="level3">
+<h3 class="anchored" data-anchor-id="benefits">Benefits</h3>
 <ul>
-<li><p><strong>Simplicity</strong>: Only needing to provide the data that needs to be updated - leave any other fields blank.</p>
-<ul>
-<li>The system automatically retains the original values for empty cells, streamlining the update process by eliminating the need to re-enter unchanged information.</li>
-</ul></li>
-<li><p><strong>Traceable Changes</strong>: Creates a human readable changelog showing exactly what was updated and when.</p></li>
-<li><p><strong>Data Validation</strong>: Comprehensive validation checks to ensure data integrity, such as checking for duplicates, invalid IDs, etc.</p></li>
-<li><p><strong>Append At End</strong>: Ability to append to, instead of overwrite, existing data. Useful for <code>Comments</code> / <code>Notes</code> columns, for instance.</p></li>
-<li><p><strong>Preserve Formatting</strong>: Ability to preserve existing notes and formatting in the original data file.</p></li>
+<li><strong>No accidental data loss</strong> — blanks are never treated as deletions; only an explicit syntax removes data.</li>
+<li><strong>Fast, low-risk review</strong> — the update sheet only holds what’s changing, so reviewers scan a few cells, not full rows.</li>
+<li><strong>Full traceability</strong> — every run generates an automatic before/after changelog. See below for an example.</li>
+<li><strong>Batch-friendly</strong> — built for periodic, accumulated updates rather than one-off edits, streamlining what would otherwise be repetitive manual work.</li>
+<li><strong>Scales beyond this use case</strong> — the same pattern works for any team maintaining data in Excel.</li>
 </ul>
 </section>
-<section id="tracking-options" class="level2">
-<h2 class="anchored" data-anchor-id="tracking-options">Tracking Options</h2>
-<p>Configurable tracking options for the generated changelog. WIP.</p>
-<hr>
-<section id="trackingoptions" class="level3">
-<h3 class="anchored" data-anchor-id="trackingoptions">TrackingOptions</h3>
-<blockquote class="blockquote">
-<pre><code> TrackingOptions (ids:list[str], track_all_changes_cols:list[str])</code></pre>
-</blockquote>
-</section>
+<section id="example-changelog" class="level3">
+<h3 class="anchored" data-anchor-id="example-changelog">Example Changelog</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">'20260904_213004'</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="st">'5601572'</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">First</span><span class="kw">:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">before</span><span class="kw">:</span><span class="at"> Jimmy</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">after</span><span class="kw">:</span><span class="at"> Jimmy (Estate of)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">Current Status</span><span class="kw">:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">before</span><span class="kw">:</span><span class="at"> Retired</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">after</span><span class="kw">:</span><span class="at"> N/A (died)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">Date of Current Status</span><span class="kw">:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">before</span><span class="kw">:</span><span class="at"> </span><span class="st">'1991-12-01'</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">after</span><span class="kw">:</span><span class="at"> </span><span class="st">'2026-01-01'</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">"Member's Date of Death"</span><span class="kw">:</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">before</span><span class="kw">:</span><span class="at"> </span><span class="st">''</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">after</span><span class="kw">:</span><span class="at"> </span><span class="st">'2026-01-01'</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="st">'9882545'</span><span class="kw">:</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">Updated</span><span class="kw">:</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">before</span><span class="kw">:</span><span class="at"> </span><span class="st">'2017-10-01'</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">after</span><span class="kw">:</span><span class="at"> </span><span class="st">'2026-09-04'</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">Street</span><span class="kw">:</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">before</span><span class="kw">:</span><span class="at"> 128 - 93 Street</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">after</span><span class="kw">:</span><span class="at"> 19-10112 169 Street NW</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">Postal</span><span class="kw">:</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">before</span><span class="kw">:</span><span class="at"> X5E 3Z2</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">after</span><span class="kw">:</span><span class="at"> X5K 1Z9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="update" class="level2">
 <h2 class="anchored" data-anchor-id="update">Update</h2>
@@ -293,7 +306,7 @@ ul.task-list li input[type="checkbox"] {
        tracking_opts:__main__.TrackingOptions|None=None,
        _changelog_dir:str='./')</code></pre>
 </blockquote>
-<p><em>…</em></p>
+<p><em>Main function.</em></p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 6%">
@@ -320,7 +333,7 @@ ul.task-list li input[type="checkbox"] {
 <td>str_cols</td>
 <td>Optional</td>
 <td>None</td>
-<td>Add all cols where there may be leading zeroes that should be preserved, or if the values should be read in as string.</td>
+<td>Columns where values values should be read in as string.</td>
 </tr>
 <tr class="odd">
 <td>input_file</td>
@@ -332,13 +345,13 @@ ul.task-list li input[type="checkbox"] {
 <td>tracking_opts</td>
 <td><strong>main</strong>.TrackingOptions | None</td>
 <td>None</td>
-<td>TrackingOptions | None</td>
+<td>Experimental feature</td>
 </tr>
 <tr class="odd">
 <td>_changelog_dir</td>
 <td>str</td>
 <td>./</td>
-<td>Set path for changelog yml output. Default is <code>cwd</code>.</td>
+<td>Set path for changelog yml output. Default is cwd.</td>
 </tr>
 <tr class="even">
 <td><strong>Returns</strong></td>
@@ -444,6 +457,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
     clipboardModal.on('success', onCopySuccess);
   }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/pyronone\.github\.io\/srs_updates");
@@ -460,6 +524,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -779,4 +848,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

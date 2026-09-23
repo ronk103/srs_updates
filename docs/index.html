@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>From Tedious to Effortless – srs_updates</title>
+<title>Member Data Update Automation Suite – srs_updates</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -66,13 +66,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="From Tedious to Effortless – srs_updates">
+<meta property="og:title" content="Member Data Update Automation Suite – srs_updates">
 <meta property="og:description" content="…">
 <meta property="og:site_name" content="srs_updates">
-<meta name="twitter:title" content="From Tedious to Effortless – srs_updates">
+<meta name="twitter:title" content="Member Data Update Automation Suite – srs_updates">
 <meta name="twitter:description" content="…">
 <meta name="twitter:card" content="summary">
 </head>
@@ -98,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">From Tedious to Effortless</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Member Data Update Automation Suite</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -113,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">From Tedious to Effortless</span></a>
+ <span class="menu-text">Member Data Update Automation Suite</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -129,24 +130,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./core.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">core</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./update_data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">update_data</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./srs_specific.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">srs_specific</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./export.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">export</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -180,29 +163,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Scripts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./scripts/main_script.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Main Script</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./scripts/close_and_reassign_harmony_tickets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Close / Re-assign Harmony Tickets</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -213,8 +173,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#streamlined-data-updates-with-python" id="toc-streamlined-data-updates-with-python" class="nav-link active" data-scroll-target="#streamlined-data-updates-with-python">Streamlined Data Updates with Python</a></li>
-  <li><a href="#key-features" id="toc-key-features" class="nav-link" data-scroll-target="#key-features">Key Features</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#why-i-built-this" id="toc-why-i-built-this" class="nav-link" data-scroll-target="#why-i-built-this">Why I Built This</a></li>
+  <li><a href="#key-benefits" id="toc-key-benefits" class="nav-link" data-scroll-target="#key-benefits">Key Benefits</a></li>
   </ul>
 </nav>
     </div>
@@ -223,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">From Tedious to Effortless</h1>
+<h1 class="title">Member Data Update Automation Suite</h1>
 </div>
 
 
@@ -241,66 +202,27 @@ ul.task-list li input[type="checkbox"] {
 
 
 <!-- ... -->
-<section id="streamlined-data-updates-with-python" class="level2">
-<h2 class="anchored" data-anchor-id="streamlined-data-updates-with-python">Streamlined Data Updates with Python</h2>
-<hr>
-<p>When I first joined, processing day-to-day data updates for the Sears plan was a painfully manual process.</p>
-<p>Every month, we’d comb through tickets in an internal ticket system, manually updating a massive Excel ‘database’ file and working on a separate ‘maintenance file’ — a critical file sent monthly to CIBC Mellon to update their systems.</p>
-<p>The process was so tedious it led to skipped steps and one of my first tasks when I joined was reconciling incongruent data between the internal and external databases. Shortly afterwards, I took ownership of the entire data update process.</p>
-<p>Now, the entire workflow is streamlined in a scalable, maintainable system:</p>
-<ul>
-<li>tickets are exported automatically for quick review and minor edits<br>
-</li>
-<li>the database updates are automated via scripts and macros<br>
-</li>
-<li>maintenance files are generated automatically with only minor revisions needed at the end</li>
-</ul>
-<p><strong>What once took hours of manual work now runs automatically in a fraction of the time with near-perfect accuracy.</strong></p>
-<hr>
+<section id="overview" class="level3">
+<h3 class="anchored" data-anchor-id="overview">Overview</h3>
+<p>A Python automation suite that replaces manual, ticket-by-ticket updates with a scrape → extract → review → batch-update → close pipeline.</p>
+<p>It scrapes tickets via browser automation (no export feature exists), extracts structured fields from unstructured notes, and applies validated, auditable updates to both an internal Excel database and external bank files — cutting a multi-hour manual process down to minutes.</p>
 </section>
-<section id="key-features" class="level2">
-<h2 class="anchored" data-anchor-id="key-features">Key Features</h2>
+<section id="why-i-built-this" class="level3">
+<h3 class="anchored" data-anchor-id="why-i-built-this">Why I Built This</h3>
+<p>The existing process required manually opening each ticket, reading through comments and notes, transcribing relevant fields (addresses, phone numbers, banking details, dates of death, status changes) into a working file, and separately re-entering that data into both the internal database and a bank submission file — 2-3x a month, for 70-100+ tickets per cycle. Tickets then had to be closed or reassigned by hand one at a time.</p>
+<p>This process had no safety net: no changelog, no reliable way to answer “what changed for member so-and-so, on what date, and to which fields,” and no protection against an accidental overwrite silently propagating into a payment or tax record. It was also entirely manual labor with no reuse — every cycle started from zero.</p>
+<p>I built this suite to remove the repetitive, error-prone parts of the workflow while keeping a human in the loop exactly where judgment is still needed: reviewing extracted data and handling edge cases, not re-typing information that’s already sitting in a ticket.</p>
+</section>
+<section id="key-benefits" class="level3">
+<h3 class="anchored" data-anchor-id="key-benefits">Key Benefits</h3>
 <ul>
-<li><p><strong>Automated Ticket Scraping</strong></p>
-<p>The <a href="./harmony_automation.html">Harmony Automation</a> module streamlines data collection by automatically scraping all comments and notes from tickets in our internal system — <strong>no more manual copy-pasting or tedious browser navigation</strong>.</p>
-<p>Scraped comments are automatically cleaned, formatted, and sorted chronologically, turning raw text into clear, structured insights.</p></li>
-<li><p><strong>Seamless Data Extraction – Minimal Effort, Maximum Efficiency</strong></p>
-<p>Scraped ticket data lands <strong>automatically in a spreadsheet</strong>, requiring only <strong>light manual tweaks</strong> — just enough to let the <code>core</code> module work its magic. From there, it intelligently <strong>extracts structured data</strong> from notes, transforming messy text into clean, structured data. No tedious preprocessing — just <strong>quick edits, effortless automation</strong>, and ready-to-use data.</p>
-<p>For example, the <code>core</code> module will automatically extract the address, email, and phone number update from the following:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/example_ticket_note.png" class="img-fluid figure-img"></p>
-<figcaption>Example</figcaption>
-</figure>
-</div>
-<p>You can probably begin to imagine how much time and effort this saves, especially with hundreds of such updates/tickets.</p></li>
-<li><p><strong>Integrated Data Enrichment</strong></p>
-<p>The tracking spreadsheet pulls in additional supplementary data from various sources using Power Query, including reports from CIBC Mellon (plan custodian) and our internal databases, to support a comprehensive set of features.</p>
-<p>For example, if a member dies, a note will be generated advising of any further entitlements owed (remaining guarantee period, survivor benefits, etc.). This note is added automatically when re-assigning the tickets to the colleague that handles those processes.</p></li>
-<li><p><strong>Effortless System Synchronization</strong></p>
-<p>Tired of manually tracking which systems need to be updated? This package <strong>automatically determines</strong> where changes should be applied — whether internal, external (plan custodian), or both.</p>
-<p>And the beauty is it’s <strong>fully extendable</strong>, able to handle virtually any update, automatically determining which system is affected and automatically <strong>tweaking the update to meet the requirements of that particular system</strong>. As the package evolves, more features are added, further turning complexity into simplicity.</p></li>
-<li><p><strong>Automated Data Updates in Seconds</strong></p>
-<p>This package transforms raw input spreadsheets into standardized Excel files — ready to update internal databases and external systems. It minimizes the need for manual reformatting and reduces processing time from hours to minutes, all while maintaining flawless data consistency.</p>
-<p>For updates to the internal database, the <a href="./update_xl.html">update_xl</a> module also generates detailed, <strong>human-readable changelogs showing exactly what changes were made and when</strong>.</p></li>
-<li><p><strong>Automated Ticket Closing / Re-assigning</strong></p>
-<p>The <a href="./harmony_automation.html">Harmony Automation</a> module contains functions to automate the closing and re-assigning of tickets, which means no more manually closing and re-assigning tickets and tedious browser navigation/actions.</p>
-<p>This is particularly useful during periods of higher ticket volumes, such as after sending out communications, option forms, etc.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/sshot_close_logs.png" class="img-fluid figure-img"></p>
-<figcaption>Closing tickets</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./images/sshot_reassign_logs.png" class="img-fluid figure-img"></p>
-<figcaption>Re-assign tickets</figcaption>
-</figure>
-</div></li>
-<li><p><strong>Custom Warnings for Specific IDs</strong></p>
-<p>Custom warnings for specific IDs can be configured in <code>cfg/warn_ids.yml</code>, allowing you to define contextual alerts that appear during operations for particular users or transactions.</p>
-<p>For example, when processing a banking update for a specific member, the system can display a custom warning about additional verification steps or adjusted payment amounts, ensuring important exceptions and special instructions are never overlooked.</p></li>
+<li><strong>~82% reduction in ticket processing time</strong> — an estimated 12–14 hours saved per month, based on ~70–100 tickets per cycle, 2 cycles/month</li>
+<li><strong>Automated file preparation</strong> — the two monthly submission files (main + off-cycle) are ~90% auto-generated; the remaining manual portion takes ~20 minutes, versus an estimated hour (or more) for someone doing it by hand</li>
+<li><strong>No accidental data loss</strong> — blank fields are never treated as deletions; a separate explicit syntax is required to remove data</li>
+<li><strong>Full audit trail</strong> — every update automatically generates a before/after changelog, closing the “what changed, for whom, and when” gap entirely</li>
+<li><strong>Automated ticket handling</strong> — replaces opening and reading 70–100+ tickets one by one with an effortless automated scrape that exports all tickets and comments into one Excel file. Automates closing and re-assigning the tickets once the update is complete.<br>
+</li>
+<li><strong>Built for scale and reuse</strong> — the core modules, with minor tweaking, can be adapted to any workflow where data is tracked manually across tickets or spreadsheets.</li>
 </ul>
 
 
@@ -397,6 +319,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
     clipboardModal.on('success', onCopySuccess);
   }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/pyronone\.github\.io\/srs_updates");
@@ -413,6 +386,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -732,4 +710,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

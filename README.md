@@ -1,125 +1,58 @@
-# From Tedious to Effortless
+# Member Data Update Automation Suite
 
 
 <!-- ... -->
 
-## Streamlined Data Updates with Python
+### Overview
 
-------------------------------------------------------------------------
+A Python automation suite that replaces manual, ticket-by-ticket updates
+with a scrape → extract → review → batch-update → close pipeline.
 
-When I first joined, processing day-to-day data updates for the Sears
-plan was a painfully manual process.
+It scrapes tickets via browser automation (no export feature exists),
+extracts structured fields from unstructured notes, and applies
+validated, auditable updates to both an internal Excel database and
+external bank files — cutting a multi-hour manual process down to
+minutes.
 
-Every month, we’d comb through tickets in an internal ticket system,
-manually updating a massive Excel ‘database’ file and working on a
-separate ‘maintenance file’ — a critical file sent monthly to CIBC
-Mellon to update their systems.
+### Why I Built This
 
-The process was so tedious it led to skipped steps and one of my first
-tasks when I joined was reconciling incongruent data between the
-internal and external databases. Shortly afterwards, I took ownership of
-the entire data update process.
+The existing process required manually opening each ticket, reading
+through comments and notes, transcribing relevant fields (addresses,
+phone numbers, banking details, dates of death, status changes) into a
+working file, and separately re-entering that data into both the
+internal database and a bank submission file — 2-3x a month, for 70-100+
+tickets per cycle. Tickets then had to be closed or reassigned by hand
+one at a time.
 
-Now, the entire workflow is streamlined in a scalable, maintainable
-system:
+This process had no safety net: no changelog, no reliable way to answer
+“what changed for member so-and-so, on what date, and to which fields,”
+and no protection against an accidental overwrite silently propagating
+into a payment or tax record. It was also entirely manual labor with no
+reuse — every cycle started from zero.
 
-- tickets are exported automatically for quick review and minor edits  
-- the database updates are automated via scripts and macros  
-- maintenance files are generated automatically with only minor
-  revisions needed at the end
+I built this suite to remove the repetitive, error-prone parts of the
+workflow while keeping a human in the loop exactly where judgment is
+still needed: reviewing extracted data and handling edge cases, not
+re-typing information that’s already sitting in a ticket.
 
-**What once took hours of manual work now runs automatically in a
-fraction of the time with near-perfect accuracy.**
+### Key Benefits
 
-------------------------------------------------------------------------
-
-## Key Features
-
-- **Automated Ticket Scraping**
-
-  The [Harmony Automation](./11_harmony_automation.ipynb) module
-  streamlines data collection by automatically scraping all comments and
-  notes from tickets in our internal system — **no more manual
-  copy-pasting or tedious browser navigation**.
-
-  Scraped comments are automatically cleaned, formatted, and sorted
-  chronologically, turning raw text into clear, structured insights.
-
-- **Seamless Data Extraction – Minimal Effort, Maximum Efficiency**
-
-  Scraped ticket data lands **automatically in a spreadsheet**,
-  requiring only **light manual tweaks** — just enough to let the `core`
-  module work its magic. From there, it intelligently **extracts
-  structured data** from notes, transforming messy text into clean,
-  structured data. No tedious preprocessing — just **quick edits,
-  effortless automation**, and ready-to-use data.
-
-  For example, the `core` module will automatically extract the address,
-  email, and phone number update from the following:
-
-  ![Example](./images/example_ticket_note.png)
-
-  You can probably begin to imagine how much time and effort this saves,
-  especially with hundreds of such updates/tickets.
-
-- **Integrated Data Enrichment**
-
-  The tracking spreadsheet pulls in additional supplementary data from
-  various sources using Power Query, including reports from CIBC Mellon
-  (plan custodian) and our internal databases, to support a
-  comprehensive set of features.
-
-  For example, if a member dies, a note will be generated advising of
-  any further entitlements owed (remaining guarantee period, survivor
-  benefits, etc.). This note is added automatically when re-assigning
-  the tickets to the colleague that handles those processes.
-
-- **Effortless System Synchronization**
-
-  Tired of manually tracking which systems need to be updated? This
-  package **automatically determines** where changes should be applied —
-  whether internal, external (plan custodian), or both.
-
-  And the beauty is it’s **fully extendable**, able to handle virtually
-  any update, automatically determining which system is affected and
-  automatically **tweaking the update to meet the requirements of that
-  particular system**. As the package evolves, more features are added,
-  further turning complexity into simplicity.
-
-- **Automated Data Updates in Seconds**
-
-  This package transforms raw input spreadsheets into standardized Excel
-  files — ready to update internal databases and external systems. It
-  minimizes the need for manual reformatting and reduces processing time
-  from hours to minutes, all while maintaining flawless data
-  consistency.
-
-  For updates to the internal database, the
-  [update_xl](./08_update_xl.ipynb) module also generates detailed,
-  **human-readable changelogs showing exactly what changes were made and
-  when**.
-
-- **Automated Ticket Closing / Re-assigning**
-
-  The [Harmony Automation](./11_harmony_automation.ipynb) module
-  contains functions to automate the closing and re-assigning of
-  tickets, which means no more manually closing and re-assigning tickets
-  and tedious browser navigation/actions.
-
-  This is particularly useful during periods of higher ticket volumes,
-  such as after sending out communications, option forms, etc.
-
-  ![Closing tickets](./images/sshot_close_logs.png)
-
-  ![Re-assign tickets](./images/sshot_reassign_logs.png)
-
-- **Custom Warnings for Specific IDs**
-
-  Custom warnings for specific IDs can be configured in
-  `cfg/warn_ids.yml`, allowing you to define contextual alerts that
-  appear during operations for particular users or transactions.
-
-  For example, when processing a banking update for a specific member,
-  the system can display a custom warning about additional verification
-  steps or adjusted payment amounts, ensuring important exceptions and
-  special instructions are never overlooked.
+- **~82% reduction in ticket processing time** — an estimated 12–14
+  hours saved per month, based on ~70–100 tickets per cycle, 2
+  cycles/month
+- **Automated file preparation** — the two monthly submission files
+  (main + off-cycle) are ~90% auto-generated; the remaining manual
+  portion takes ~20 minutes, versus an estimated hour (or more) for
+  someone doing it by hand
+- **No accidental data loss** — blank fields are never treated as
+  deletions; a separate explicit syntax is required to remove data
+- **Full audit trail** — every update automatically generates a
+  before/after changelog, closing the “what changed, for whom, and when”
+  gap entirely
+- **Automated ticket handling** — replaces opening and reading 70–100+
+  tickets one by one with an effortless automated scrape that exports
+  all tickets and comments into one Excel file. Automates closing and
+  re-assigning the tickets once the update is complete.  
+- **Built for scale and reuse** — the core modules, with minor tweaking,
+  can be adapted to any workflow where data is tracked manually across
+  tickets or spreadsheets.
